@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnPindah;
+    Button btnPindah, btnPindahDenganData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,17 @@ public class MainActivity extends AppCompatActivity {
                 Intent moveActivity = new Intent(MainActivity.this, MoveActivity.class);
                 startActivity(moveActivity);
 
+            }
+        });
+
+        btnPindahDenganData = findViewById(R.id.btn_pindah_dengan_data);
+        btnPindahDenganData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent move = new Intent(MainActivity.this, MovieWithDataActivity.class);
+                move.putExtra("data", "FT Universitas Islam Madura");
+                startActivity(move);
             }
         });
     }
